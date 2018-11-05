@@ -1,0 +1,28 @@
+.navbar {
+  padding: 20px 0;
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  background-color: #2196F3;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  font-family: 'Roboto';
+}
+
+.logo, .nav {
+  display: inline-block;
+  margin: 0 0 0 .5em;
+}
+
+.navbar a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #DDD;
+}
+
+.nav-right {
+  float: right;
+  line-height: 39px;
+}

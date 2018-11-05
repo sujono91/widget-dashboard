@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <div class="list">
+    <app-list class="list" [dataTypes]="dataTypes" (addChart)="addChart($event)" (removeChart)="removeChart($event)">
+    </app-list>
+  </div>
+  <div>
+    <div class="box-list" cdkDropList (cdkDropListDropped)="onDrop($event)">
+      <div *ngFor="let item of dataTypes; let i = index;" cdkDrag class="box">
+        <br *ngIf="i > 0" />
+        <app-chart
+          *ngIf="item.isActive"
+          [data]="data[item.name].rows"
+          [labels]="data[item.name].labels"
+          [hoverLabels]="data[item.name].hoverLabels"
+          [title]="data[item.name].title"
+          [backgroundColor]="data[item.name].backgroundColor"
+          [borderColor]="data[item.name].borderColor"
+          (close)="removeChart(item.name)"
+        ></app-chart>
+      </div>
+    </div>
+  </div>
+</div>

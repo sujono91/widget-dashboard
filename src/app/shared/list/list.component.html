@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>Type</th>
+    <th class="center">Actions</th>
+  </tr>
+  <tr *ngFor="let dataType of dataTypes">
+    <td>
+      <div class="type-wrapper">
+        <i class="{{ dataType.icon }} fa-lg"></i>
+        <label class="type-wrapper-text">{{ dataType.name }}</label>
+      </div>
+    </td>
+    <td class="center">
+      <i class="fa fa-plus fa-lg actions" *ngIf="!dataType.isActive" (click)="add(dataType.name)"></i>
+      <i class="fa fa-times fa-lg actions" *ngIf="dataType.isActive" (click)="remove(dataType.name)"></i>
+    </td>
+  </tr>
+</table>
